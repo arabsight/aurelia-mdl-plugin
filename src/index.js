@@ -6,7 +6,9 @@ export function configure(config) {
 }
 
 function upgrade(view) {
-  if (typeof (componentHandler) == 'undefined') return;
+  if (typeof (componentHandler) == 'undefined') {
+    throw new Error('mdl needs to be loaded.');
+  };
 
   const mdlClasses = [
     '.mdl-layout',
@@ -36,7 +38,7 @@ function upgrade(view) {
     if (item.parentElement) { continue; }
     if (item.classList && item.classList.contains('mdl-layout')) {
       let container = document.createElement('div');
-      container.classList.add('layout-wrapper');
+      container.classList.add(wrapperClass);
       item.parentNode.insertBefore(container, item);
       item.parentNode.removeChild(item);
       container.appendChild(item);

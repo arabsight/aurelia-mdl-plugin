@@ -7,16 +7,16 @@
     "mdl",
     "material"
   ],
-  "homepage": "http://aurelia.io",
+  "homepage": "https://github.com/arabsight/aurelia-mdl-plugin",
   "bugs": {
-    "url": "https://github.com/aurelia/skeleton-plugin/issues"
+    "url": "https://github.com/arabsight/aurelia-mdl-plugin/issues"
   },
-  "license": "CC0-1.0",
-  "author": "Rob Eisenberg <rob@bluespire.com> (http://robeisenberg.com/)",
+  "license": "MIT",
+  "author": "Rabah Ghodbane <r-ghodbane@live.com>",
   "main": "dist/commonjs/index.js",
   "repository": {
     "type": "git",
-    "url": "http://github.com/aurelia/skeleton-plugin"
+    "url": "https://github.com/arabsight/aurelia-mdl-plugin"
   },
   "devDependencies": {
     "aurelia-tools": "^0.1.18",
@@ -56,13 +56,11 @@
   },
   "jspm": {
     "registry": "npm",
-    "jspmPackage": true,
     "main": "index",
     "format": "amd",
     "directories": {
       "dist": "dist/amd"
     },
-    "peerDependencies": {},
     "devDependencies": {
       "aurelia-polyfills": "^1.0.0-beta.1.1.0"
     }
