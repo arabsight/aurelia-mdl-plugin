@@ -1,7 +1,7 @@
 {
   "name": "aurelia-mdl-plugin",
-  "version": "0.0.3",
-  "description": "Material Design Lite plugin for plugin.",
+  "version": "0.0.4",
+  "description": "Material Design Lite plugin for Aurelia.",
   "keywords": [
     "aurelia",
     "mdl",

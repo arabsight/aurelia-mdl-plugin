@@ -40,7 +40,6 @@ function upgrade(view) {
     }
     if (item.classList && item.classList.contains('mdl-layout')) {
       var container = document.createElement('div');
-      container.classList.add(wrapperClass);
       item.parentNode.insertBefore(container, item);
       item.parentNode.removeChild(item);
       container.appendChild(item);
