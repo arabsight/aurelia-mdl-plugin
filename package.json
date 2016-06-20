@@ -1,6 +1,6 @@
 {
   "name": "aurelia-mdl-plugin",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Material Design Lite plugin for plugin.",
   "keywords": [
     "aurelia",
@@ -8,7 +8,7 @@
     "material"
   ],
   "scripts": {
-    "push": "git add --all && git commit -m '$(date)' && git push origin master"
+    "push": "git add --all && git commit -m \"$(date)\" && git push origin master"
   },
   "homepage": "https://github.com/arabsight/aurelia-mdl-plugin",
   "bugs": {
