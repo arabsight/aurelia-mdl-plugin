@@ -6,7 +6,7 @@
 ## Usage
 
 ```shell
-jspm install github:arabsight/aurelia-mdl-plugin
+jspm install npm:aurelia-mdl-plugin
 ```
 
 ```js

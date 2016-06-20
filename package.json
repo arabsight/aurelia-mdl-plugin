@@ -55,7 +55,7 @@
     "yargs": "^2.1.1"
   },
   "jspm": {
-    "registry": "github",
+    "registry": "npm",
     "main": "index",
     "format": "amd",
     "directories": {
