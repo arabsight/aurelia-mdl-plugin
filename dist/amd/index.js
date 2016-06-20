@@ -14,9 +14,9 @@ define(['exports'], function (exports) {
   }
 
   function upgrade(view) {
-    if (typeof componentHandler == 'undefined') {
+    if (typeof componentHandler === 'undefined') {
       throw new Error('mdl needs to be loaded.');
-    };
+    }
 
     var mdlClasses = ['.mdl-layout', '.mdl-tabs', '.mdl-button', '.mdl-textfield', '.mdl-checkbox', '.mdl-radio', '.mdl-switch', '.mdl-progress', '.mdl-spinner', '.mdl-slider', '.mdl-grid', '.mdl-data-table', '.mdl-tooltip', '.mdl-icon-toggle', '.mdl-dialog', '.mdl-mega-footer', '.mdl-mini-footer', '.mdl-menu', '.mdl-snackbar'];
 

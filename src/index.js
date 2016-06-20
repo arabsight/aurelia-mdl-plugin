@@ -6,9 +6,9 @@ export function configure(config) {
 }
 
 function upgrade(view) {
-  if (typeof (componentHandler) == 'undefined') {
+  if (typeof (componentHandler) === 'undefined') {
     throw new Error('mdl needs to be loaded.');
-  };
+  }
 
   const mdlClasses = [
     '.mdl-layout',
