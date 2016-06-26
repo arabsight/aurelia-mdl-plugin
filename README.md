@@ -5,12 +5,17 @@
 
 ## Usage
 
+install mdl & plugin:
+
 ```shell
+jspm install material-design-lite
 jspm install npm:aurelia-mdl-plugin
 ```
 
+configure aurelia:
+
 ```js
-import 'mdl/material';
+import 'material-design-lite/material';
 
 export function configure(aurelia) {
     aurelia.use
