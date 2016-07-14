@@ -9,7 +9,7 @@ function upgrade(view) {
     throw new Error('mdl needs to be loaded.');
   }
 
-  const mdlClasses = ['.mdl-layout', '.mdl-tabs', '.mdl-button', '.mdl-textfield', '.mdl-checkbox', '.mdl-radio', '.mdl-switch', '.mdl-progress', '.mdl-spinner', '.mdl-slider', '.mdl-grid', '.mdl-data-table', '.mdl-tooltip', '.mdl-icon-toggle', '.mdl-dialog', '.mdl-mega-footer', '.mdl-mini-footer', '.mdl-menu', '.mdl-snackbar'];
+  const mdlClasses = ['.mdl-js-button', '.mdl-js-checkbox', '.mdl-js-data-table', '.mdl-js-icon-toggle', '.mdl-js-layout', '.mdl-js-menu', '.mdl-js-progress', '.mdl-js-radio', '.mdl-js-ripple-effect', '.mdl-js-slider', '.mdl-js-snackbar', '.mdl-js-spinner', '.mdl-js-switch', '.mdl-js-tabs', '.mdl-js-textfield', '.mdl-tooltip'];
 
   let mdlElements = view.fragment.querySelectorAll(mdlClasses.join());
 
@@ -17,7 +17,7 @@ function upgrade(view) {
     if (item.parentElement) {
       continue;
     }
-    if (item.classList && item.classList.contains('mdl-layout')) {
+    if (item.classList && (item.classList.contains('mdl-js-layout') || item.classList.contains('mdl-js-menu'))) {
       let container = document.createElement('div');
       item.parentNode.insertBefore(container, item);
       item.parentNode.removeChild(item);
