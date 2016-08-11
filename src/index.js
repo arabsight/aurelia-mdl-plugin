@@ -5,10 +5,10 @@ export function configure(config, configCallback) {
     throw new Error('mdl needs to be loaded.');
   }
 
-  let ctg = new MdlConfig();
+  let cfg = new MdlConfig();
 
   if (configCallback !== undefined && typeof(configCallback) === 'function') {
-    configCallback(ctg);
+    configCallback(cfg);
   }
 
   if (cfg.usingAttr === true) {

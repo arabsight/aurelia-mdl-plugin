@@ -12,10 +12,10 @@ function configure(config, configCallback) {
     throw new Error('mdl needs to be loaded.');
   }
 
-  var ctg = new _config.MdlConfig();
+  var cfg = new _config.MdlConfig();
 
   if (configCallback !== undefined && typeof configCallback === 'function') {
-    configCallback(ctg);
+    configCallback(cfg);
   }
 
   if (cfg.usingAttr === true) {
