@@ -51,7 +51,7 @@ add mdl & plugin to one of your bundle's dependencies.
     "path": "../node_modules/material-design-lite/dist",
     "main": "material",
     "resources": [
-        "material.css" // or one of the color themes
+        "material.css"
     ]
 },
 {
