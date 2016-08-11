@@ -15,6 +15,8 @@ System.register(['./config'], function (_export, _context) {
       configCallback(cfg);
     }
 
+    console.log('using attribute: ' + cfg.usingAttr);
+
     if (cfg.usingAttr === true) {
       config.aurelia.use.globalResources('./mdl');
     } else {

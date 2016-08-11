@@ -16,6 +16,8 @@ define(['exports', './config'], function (exports, _config) {
       configCallback(cfg);
     }
 
+    console.log('using attribute: ' + cfg.usingAttr);
+
     if (cfg.usingAttr === true) {
       config.aurelia.use.globalResources('./mdl');
     } else {
