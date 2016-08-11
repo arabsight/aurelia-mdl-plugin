@@ -1,3 +1,5 @@
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) arr2[i] = arr[i]; return arr2; } else { return Array.from(arr); } }
+
 import { MdlConfig } from './config';
 
 export function configure(config, configCallback) {
@@ -10,8 +12,6 @@ export function configure(config, configCallback) {
   if (configCallback !== undefined && typeof configCallback === 'function') {
     configCallback(cfg);
   }
-
-  console.log('using attribute: ' + cfg.usingAttr);
 
   if (cfg.usingAttr === true) {
     config.aurelia.use.globalResources('./mdl');
@@ -26,7 +26,7 @@ function onViewCreated() {
   let target = document.body;
 
   let observer = new MutationObserver(mutations => {
-    mutations.filter(m => m.type === 'childList' && m.addedNodes.length > 0).map(record => [...record.addedNodes]).reduce((a, b) => a.concat(b), []).filter(node => node.nodeType === 1).forEach(ele => {
+    mutations.filter(m => m.type === 'childList' && m.addedNodes.length > 0).map(record => [].concat(_toConsumableArray(record.addedNodes))).reduce((a, b) => a.concat(b), []).filter(node => node.nodeType === 1).forEach(ele => {
       tryUpgrade(ele);
     });
   });

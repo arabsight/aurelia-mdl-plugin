@@ -7,6 +7,8 @@ exports.configure = configure;
 
 var _config = require('./config');
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 function configure(config, configCallback) {
   if (typeof componentHandler === 'undefined') {
     throw new Error('mdl needs to be loaded.');
@@ -17,8 +19,6 @@ function configure(config, configCallback) {
   if (configCallback !== undefined && typeof configCallback === 'function') {
     configCallback(cfg);
   }
-
-  console.log('using attribute: ' + cfg.usingAttr);
 
   if (cfg.usingAttr === true) {
     config.aurelia.use.globalResources('./mdl');
@@ -36,7 +36,7 @@ function onViewCreated() {
     mutations.filter(function (m) {
       return m.type === 'childList' && m.addedNodes.length > 0;
     }).map(function (record) {
-      return [].concat(record.addedNodes);
+      return [].concat(_toConsumableArray(record.addedNodes));
     }).reduce(function (a, b) {
       return a.concat(b);
     }, []).filter(function (node) {
