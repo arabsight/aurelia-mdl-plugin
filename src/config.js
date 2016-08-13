@@ -26,8 +26,8 @@ export class MdlConfig {
         this.usingAttr = true;
     }
 
-    addClasses(names) {
-
+    addClasses(...names) {
+        MDL_CLASSES.push(...names);
     }
 
     get mdlClasses() {

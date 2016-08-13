@@ -42,7 +42,9 @@ define(['exports'], function (exports) {
             this.usingAttr = true;
         };
 
-        MdlConfig.prototype.addClasses = function addClasses(names) {};
+        MdlConfig.prototype.addClasses = function addClasses() {
+            MDL_CLASSES.push.apply(MDL_CLASSES, arguments);
+        };
 
         _createClass(MdlConfig, [{
             key: 'mdlClasses',

@@ -9,7 +9,9 @@ export let MdlConfig = class MdlConfig {
         this.usingAttr = true;
     }
 
-    addClasses(names) {}
+    addClasses(...names) {
+        MDL_CLASSES.push.apply(MDL_CLASSES, names);
+    }
 
     get mdlClasses() {
         return MDL_CLASSES;
