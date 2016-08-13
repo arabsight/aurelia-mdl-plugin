@@ -1,13 +1,13 @@
-import { inject, customAttribute } from 'aurelia-framework';
+import {inject, customAttribute} from 'aurelia-framework';
 
 @inject(Element)
 @customAttribute('mdl')
 export class Mdl {
-  constructor(element) {
-    this.element = element;
-  }
+    constructor(element) {
+        this.element = element;
+    }
 
-  attached() {
-    componentHandler.upgradeElement(this.element);
-  }
+    attached() {
+        componentHandler.upgradeElement(this.element);
+    }
 }
