@@ -13,40 +13,52 @@ export function configure(config, configCallback) {
         configCallback(pluginConfig);
     }
 
-    if (pluginConfig.usingAttr === true) {
-        config.aurelia.use.globalResources('./mdl');
-    } else {
+    config.aurelia.use.globalResources('./mdl');
+
+    if (pluginConfig.autoUpgradeMode === true) {
         config.aurelia.resources
             .registerViewEngineHooks({
-                afterCreate: onViewCreated
+                beforeCompile: beforeViewCompiled
             });
     }
 }
 
-function onViewCreated() {
-    let target = document.body;
+function beforeViewCompiled(content, resources, instruction) {
+    let elements = content.querySelectorAll(pluginConfig.mdlSelectors);
+    if (elements.length === 0) return;
 
-    let observer = new MutationObserver((mutations) => {
-        mutations
-            .filter(m => m.type === 'childList' && m.addedNodes.length > 0)
-            .map(record => [...record.addedNodes])
-            .reduce((a, b) => a.concat(b), [])
-            .filter(node => node.nodeType === 1)
-            .forEach(ele => {
-                tryUpgrade(ele);
-            });
-    });
-
-    let cfg = {attributes: false, childList: true, characterData: false};
-    observer.observe(target, cfg);
-}
-
-function tryUpgrade(ele) {
-    let isMdlElement = pluginConfig.mdlClasses.some(cls => ele.classList.contains(cls));
-
-    if (isMdlElement) {
-        componentHandler.upgradeElement(ele);
-        ele.querySelectorAll(pluginConfig.mdlSelectors)
-            .forEach(child => componentHandler.upgradeElement(child));
+    for (let i = 0; i < elements.length; i++) {
+        let item = elements.item(i);
+        item.setAttribute('mdl-target', '');
     }
 }
+
+// function onViewCreated(view) {
+//     console.log(view);
+//     let target = document.body;
+//
+//     let observer = new MutationObserver((mutations) => {
+//         mutations
+//             .filter(m => m.type === 'childList' && m.addedNodes.length > 0)
+//             .map(record => [...record.addedNodes])
+//             .reduce((a, b) => a.concat(b), [])
+//             .filter(node => node.nodeType === 1)
+//             .forEach(ele => {
+//                 console.log(ele);
+//                 tryUpgrade(ele);
+//             });
+//     });
+//
+//     let cfg = {attributes: false, childList: true, characterData: false};
+//     observer.observe(target, cfg);
+// }
+
+// function tryUpgrade(ele) {
+//     let isMdlElement = pluginConfig.mdlClasses.some(cls => ele.classList.contains(cls));
+//
+//     if (isMdlElement) {
+//         componentHandler.upgradeElement(ele);
+//         ele.querySelectorAll(pluginConfig.mdlSelectors)
+//             .forEach(child => componentHandler.upgradeElement(child));
+//     }
+// }

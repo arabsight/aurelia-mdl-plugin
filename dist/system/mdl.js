@@ -17,7 +17,7 @@ System.register(['aurelia-framework'], function (_export, _context) {
             customAttribute = _aureliaFramework.customAttribute;
         }],
         execute: function () {
-            _export('Mdl', Mdl = (_dec = inject(Element), _dec2 = customAttribute('mdl'), _dec(_class = _dec2(_class = function () {
+            _export('Mdl', Mdl = (_dec = inject(Element), _dec2 = customAttribute('mdl-target'), _dec(_class = _dec2(_class = function () {
                 function Mdl(element) {
                     _classCallCheck(this, Mdl);
 

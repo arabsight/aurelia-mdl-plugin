@@ -2,11 +2,11 @@ const MDL_CLASSES = ['mdl-js-button', 'mdl-js-checkbox', 'mdl-js-data-table', 'm
 
 export let MdlConfig = class MdlConfig {
     constructor() {
-        this.usingAttr = false;
+        this.autoUpgradeMode = true;
     }
 
-    useAttribute() {
-        this.usingAttr = true;
+    autoUpgrade(value = true) {
+        this.autoUpgradeMode = Boolean(value);
     }
 
     addClasses(...names) {

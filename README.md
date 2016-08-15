@@ -7,7 +7,6 @@ jspm install npm:aurelia-mdl-plugin
 
 - Register the plugin:
 ```js
-// mdl needs to be loaded first
 import 'material-design-lite/material';
 
 export function configure(aurelia) {
@@ -25,7 +24,7 @@ export function configure(aurelia) {
 <template>
     <require from="material-design-lite/material.css"></require>
     ...
-    
+
     <!-- give it a try -->
     <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
         Button
@@ -37,7 +36,7 @@ export function configure(aurelia) {
 
 - Install:
 ```bash
-npm i -S material-design-lite 
+npm i -S material-design-lite
 npm i -S aurelia-mdl-plugin
 ```
 
@@ -62,3 +61,17 @@ add mdl & plugin to one of your bundle's dependencies.
 ```
 
 - Register the plugin and require css file the same way.
+- if you want to use another color theme:
+
+change the resources key:
+
+```json
+"resources": [
+    "material.deep_orange-blue.min.css"
+]
+```
+
+import the css:
+```html
+<require from="material-design-lite/material.deep_orange-blue.min.css"></require>
+```

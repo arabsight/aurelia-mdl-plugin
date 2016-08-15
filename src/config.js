@@ -19,11 +19,11 @@ const MDL_CLASSES = [
 
 export class MdlConfig {
     constructor() {
-        this.usingAttr = false;
+        this.autoUpgradeMode = true;
     }
 
-    useAttribute() {
-        this.usingAttr = true;
+    autoUpgrade(value = true) {
+        this.autoUpgradeMode = Boolean(value);
     }
 
     addClasses(...names) {

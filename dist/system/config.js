@@ -38,11 +38,13 @@ System.register([], function (_export, _context) {
                 function MdlConfig() {
                     _classCallCheck(this, MdlConfig);
 
-                    this.usingAttr = false;
+                    this.autoUpgradeMode = true;
                 }
 
-                MdlConfig.prototype.useAttribute = function useAttribute() {
-                    this.usingAttr = true;
+                MdlConfig.prototype.autoUpgrade = function autoUpgrade() {
+                    var value = arguments.length <= 0 || arguments[0] === undefined ? true : arguments[0];
+
+                    this.autoUpgradeMode = Boolean(value);
                 };
 
                 MdlConfig.prototype.addClasses = function addClasses() {
