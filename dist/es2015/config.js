@@ -7,10 +7,12 @@ export let MdlConfig = class MdlConfig {
 
     autoUpgrade(value = true) {
         this.autoUpgradeMode = Boolean(value);
+        return this;
     }
 
     addClasses(...names) {
         MDL_CLASSES.push.apply(MDL_CLASSES, names);
+        return this;
     }
 
     get mdlClasses() {

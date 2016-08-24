@@ -24,10 +24,12 @@ export class MdlConfig {
 
     autoUpgrade(value = true) {
         this.autoUpgradeMode = Boolean(value);
+        return this;
     }
 
     addClasses(...names) {
         MDL_CLASSES.push(...names);
+        return this;
     }
 
     get mdlClasses() {

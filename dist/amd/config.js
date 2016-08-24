@@ -42,10 +42,12 @@ define(['exports'], function (exports) {
             var value = arguments.length <= 0 || arguments[0] === undefined ? true : arguments[0];
 
             this.autoUpgradeMode = Boolean(value);
+            return this;
         };
 
         MdlConfig.prototype.addClasses = function addClasses() {
             MDL_CLASSES.push.apply(MDL_CLASSES, arguments);
+            return this;
         };
 
         _createClass(MdlConfig, [{
