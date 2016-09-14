@@ -1,4 +1,4 @@
-import {inject, customAttribute} from 'aurelia-framework';
+import { inject, customAttribute } from 'aurelia-framework';
 
 @inject(Element)
 @customAttribute('mdl-target')
@@ -8,6 +8,7 @@ export class Mdl {
     }
 
     attached() {
+        // todo check if autoupgrade
         componentHandler.upgradeElement(this.element);
     }
 }

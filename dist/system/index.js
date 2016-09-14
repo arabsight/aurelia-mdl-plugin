@@ -15,7 +15,7 @@ System.register(['./config'], function (_export, _context) {
             configCallback(pluginConfig);
         }
 
-        config.aurelia.use.globalResources('./mdl');
+        config.globalResources('./mdl');
 
         if (pluginConfig.autoUpgradeMode === true) {
             config.aurelia.resources.registerViewEngineHooks({
@@ -35,7 +35,6 @@ System.register(['./config'], function (_export, _context) {
             item.setAttribute('mdl-target', '');
         }
     }
-
     return {
         setters: [function (_config) {
             MdlConfig = _config.MdlConfig;

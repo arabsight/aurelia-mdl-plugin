@@ -13,7 +13,7 @@ export function configure(config, configCallback) {
         configCallback(pluginConfig);
     }
 
-    config.aurelia.use.globalResources('./mdl');
+    config.globalResources('./mdl');
 
     if (pluginConfig.autoUpgradeMode === true) {
         config.aurelia.resources.registerViewEngineHooks({
