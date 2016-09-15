@@ -1,4 +1,4 @@
-define(['exports', './config'], function (exports, _config) {
+define(['exports', './config', './mdl'], function (exports, _config, _mdl) {
     'use strict';
 
     Object.defineProperty(exports, "__esModule", {

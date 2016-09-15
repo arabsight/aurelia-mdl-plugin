@@ -1,9 +1,9 @@
 'use strict';
 
-System.register(['./config'], function (_export, _context) {
+System.register(['./config', './mdl'], function (_export, _context) {
     "use strict";
 
-    var MdlConfig, pluginConfig;
+    var MdlConfig, Mdl, pluginConfig;
     function configure(config, configCallback) {
         if (typeof componentHandler === 'undefined') {
             throw new Error('mdl needs to be loaded.');
@@ -38,6 +38,8 @@ System.register(['./config'], function (_export, _context) {
     return {
         setters: [function (_config) {
             MdlConfig = _config.MdlConfig;
+        }, function (_mdl) {
+            Mdl = _mdl.Mdl;
         }],
         execute: function () {
             pluginConfig = void 0;

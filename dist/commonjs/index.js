@@ -7,6 +7,8 @@ exports.configure = configure;
 
 var _config = require('./config');
 
+var _mdl = require('./mdl');
+
 var pluginConfig = void 0;
 
 function configure(config, configCallback) {

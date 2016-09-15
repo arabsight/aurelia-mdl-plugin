@@ -1,5 +1,8 @@
 import { MdlConfig } from './config';
 
+import { Mdl } from './mdl';
+
+
 let pluginConfig;
 
 export function configure(config, configCallback) {

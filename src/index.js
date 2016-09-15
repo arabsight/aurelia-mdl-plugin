@@ -1,4 +1,8 @@
 import { MdlConfig } from './config';
+// Temp fix to this: https://github.com/aurelia/cli/issues/292
+/* eslint-disable no-unused-vars */
+import { Mdl } from './mdl';
+/* eslint-enable no-unused-vars */
 
 let pluginConfig;
 
