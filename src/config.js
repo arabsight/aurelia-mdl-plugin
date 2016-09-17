@@ -17,6 +17,8 @@ const MDL_CLASSES = [
     'mdl-tooltip'
 ];
 
+export const MDL_ATTRIBUTE_NAME = 'mdl-target';
+
 export class MdlConfig {
     constructor() {
         this.autoUpgradeMode = true;

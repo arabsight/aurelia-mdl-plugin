@@ -1,8 +1,17 @@
-define(['exports', './config', './mdl'], function (exports, _config, _mdl) {
+define(['exports', './mdl', './config'], function (exports, _mdl, _config) {
     'use strict';
 
     Object.defineProperty(exports, "__esModule", {
         value: true
+    });
+    Object.keys(_mdl).forEach(function (key) {
+        if (key === "default" || key === "__esModule") return;
+        Object.defineProperty(exports, key, {
+            enumerable: true,
+            get: function () {
+                return _mdl[key];
+            }
+        });
     });
     exports.configure = configure;
 
@@ -11,10 +20,10 @@ define(['exports', './config', './mdl'], function (exports, _config, _mdl) {
 
     function configure(config, configCallback) {
         if (typeof componentHandler === 'undefined') {
-            throw new Error('mdl needs to be loaded.');
+            throw new Error('MDL needs to be loaded before the plugin.');
         }
 
-        pluginConfig = new _config.MdlConfig();
+        pluginConfig = config.container.get(_config.MdlConfig);
 
         if (configCallback !== undefined && typeof configCallback === 'function') {
             configCallback(pluginConfig);
@@ -35,7 +44,7 @@ define(['exports', './config', './mdl'], function (exports, _config, _mdl) {
 
         for (var i = 0; i < elements.length; i++) {
             var item = elements.item(i);
-            item.setAttribute('mdl-target', '');
+            item.setAttribute(_config.MDL_ATTRIBUTE_NAME, '');
         }
     }
 });

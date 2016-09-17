@@ -1,17 +1,18 @@
-import { MdlConfig } from './config';
+import { MdlConfig, MDL_ATTRIBUTE_NAME } from './config';
+
 // Temp fix to this: https://github.com/aurelia/cli/issues/292
-/* eslint-disable no-unused-vars */
-import { Mdl } from './mdl';
-/* eslint-enable no-unused-vars */
+export * from './mdl';
 
 let pluginConfig;
 
 export function configure(config, configCallback) {
     if (typeof (componentHandler) === 'undefined') {
-        throw new Error('mdl needs to be loaded.');
+        throw new Error('MDL needs to be loaded before the plugin.');
     }
 
-    pluginConfig = new MdlConfig();
+    // Register the class in root DI container and get a singleton
+    // to be reused in ./mdl.js
+    pluginConfig = config.container.get(MdlConfig);
 
     if (configCallback !== undefined && typeof(configCallback) === 'function') {
         configCallback(pluginConfig);
@@ -33,6 +34,6 @@ function beforeViewCompiled(content, resources, instruction) {
 
     for (let i = 0; i < elements.length; i++) {
         let item = elements.item(i);
-        item.setAttribute('mdl-target', '');
+        item.setAttribute(MDL_ATTRIBUTE_NAME, '');
     }
 }

@@ -31,6 +31,8 @@ define(['exports'], function (exports) {
 
     var MDL_CLASSES = ['mdl-js-button', 'mdl-js-checkbox', 'mdl-js-data-table', 'mdl-js-icon-toggle', 'mdl-js-layout', 'mdl-js-menu', 'mdl-js-progress', 'mdl-js-radio', 'mdl-js-ripple-effect', 'mdl-js-slider', 'mdl-js-snackbar', 'mdl-js-spinner', 'mdl-js-switch', 'mdl-js-tabs', 'mdl-js-textfield', 'mdl-tooltip'];
 
+    var MDL_ATTRIBUTE_NAME = exports.MDL_ATTRIBUTE_NAME = 'mdl-target';
+
     var MdlConfig = exports.MdlConfig = function () {
         function MdlConfig() {
             _classCallCheck(this, MdlConfig);

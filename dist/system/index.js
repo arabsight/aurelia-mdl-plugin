@@ -3,13 +3,13 @@
 System.register(['./config', './mdl'], function (_export, _context) {
     "use strict";
 
-    var MdlConfig, Mdl, pluginConfig;
+    var MdlConfig, MDL_ATTRIBUTE_NAME, pluginConfig;
     function configure(config, configCallback) {
         if (typeof componentHandler === 'undefined') {
-            throw new Error('mdl needs to be loaded.');
+            throw new Error('MDL needs to be loaded before the plugin.');
         }
 
-        pluginConfig = new MdlConfig();
+        pluginConfig = config.container.get(MdlConfig);
 
         if (configCallback !== undefined && typeof configCallback === 'function') {
             configCallback(pluginConfig);
@@ -32,14 +32,21 @@ System.register(['./config', './mdl'], function (_export, _context) {
 
         for (var i = 0; i < elements.length; i++) {
             var item = elements.item(i);
-            item.setAttribute('mdl-target', '');
+            item.setAttribute(MDL_ATTRIBUTE_NAME, '');
         }
     }
     return {
         setters: [function (_config) {
             MdlConfig = _config.MdlConfig;
+            MDL_ATTRIBUTE_NAME = _config.MDL_ATTRIBUTE_NAME;
         }, function (_mdl) {
-            Mdl = _mdl.Mdl;
+            var _exportObj = {};
+
+            for (var _key in _mdl) {
+                if (_key !== "default" && _key !== "__esModule") _exportObj[_key] = _mdl[_key];
+            }
+
+            _export(_exportObj);
         }],
         execute: function () {
             pluginConfig = void 0;

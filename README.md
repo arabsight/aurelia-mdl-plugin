@@ -146,6 +146,7 @@ export function configure(aurelia) {
 ```
 require css in html:
 ```html
+<require from="material-design-lite/material.css"></require>
 <require from="mdl-selectfield/mdl-selectfield.css"></require>
 
 <div class="mdl-selectfield mdl-js-selectfield">

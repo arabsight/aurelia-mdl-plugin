@@ -1,14 +1,22 @@
+import { MdlConfig, MDL_ATTRIBUTE_NAME } from './config';
 import { inject, customAttribute } from 'aurelia-framework';
 
-@inject(Element)
-@customAttribute('mdl-target')
+@inject(Element, MdlConfig)
+@customAttribute(MDL_ATTRIBUTE_NAME)
 export class Mdl {
-    constructor(element) {
+    constructor(element, config) {
         this.element = element;
+        this.config = config;
     }
 
     attached() {
-        // todo check if autoupgrade
-        componentHandler.upgradeElement(this.element);
+        if (this.config.autoUpgradeMode === true) {
+            return componentHandler.upgradeElement(this.element);
+        }
+
+        let isMdlElement = this.config.mdlClasses.some(cls => this.element.classList.contains(cls));
+        if (isMdlElement) {
+            componentHandler.upgradeElement(this.element);
+        }
     }
 }

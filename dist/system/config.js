@@ -3,7 +3,7 @@
 System.register([], function (_export, _context) {
     "use strict";
 
-    var _createClass, MDL_CLASSES, MdlConfig;
+    var _createClass, MDL_CLASSES, MDL_ATTRIBUTE_NAME, MdlConfig;
 
     function _classCallCheck(instance, Constructor) {
         if (!(instance instanceof Constructor)) {
@@ -33,6 +33,10 @@ System.register([], function (_export, _context) {
             }();
 
             MDL_CLASSES = ['mdl-js-button', 'mdl-js-checkbox', 'mdl-js-data-table', 'mdl-js-icon-toggle', 'mdl-js-layout', 'mdl-js-menu', 'mdl-js-progress', 'mdl-js-radio', 'mdl-js-ripple-effect', 'mdl-js-slider', 'mdl-js-snackbar', 'mdl-js-spinner', 'mdl-js-switch', 'mdl-js-tabs', 'mdl-js-textfield', 'mdl-tooltip'];
+
+            _export('MDL_ATTRIBUTE_NAME', MDL_ATTRIBUTE_NAME = 'mdl-target');
+
+            _export('MDL_ATTRIBUTE_NAME', MDL_ATTRIBUTE_NAME);
 
             _export('MdlConfig', MdlConfig = function () {
                 function MdlConfig() {
