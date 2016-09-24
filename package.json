@@ -1,6 +1,6 @@
 {
     "name": "aurelia-mdl-plugin",
-    "version": "0.1.9",
+    "version": "0.1.10",
     "description": "Material Design Lite plugin for Aurelia.",
     "keywords": [
         "aurelia",
@@ -9,8 +9,8 @@
         "material"
     ],
     "scripts": {
-        "prep": "gulp prepare-release --bump=patch && npm run push",
-        "push": "git add --all && git commit -m \"$(date)\" && git push origin master",
+        "prepush": "gulp prepare-release --bump=patch",
+        "push": "git add --all && git commit -m \"$(date)\" && git push origin master && npm publish",
         "test": "gulp test"
     },
     "homepage": "https://github.com/arabsight/aurelia-mdl-plugin",

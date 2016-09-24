@@ -3,7 +3,7 @@
 System.register([], function (_export, _context) {
     "use strict";
 
-    var _createClass, MDL_CLASSES, MDL_ATTRIBUTE_NAME, MdlConfig;
+    var _createClass, MDL_CLASSES, MDL_ATTRIBUTE_NAME, MDL_RIPPLE_SELECTOR, MdlConfig;
 
     function _classCallCheck(instance, Constructor) {
         if (!(instance instanceof Constructor)) {
@@ -37,6 +37,10 @@ System.register([], function (_export, _context) {
             _export('MDL_ATTRIBUTE_NAME', MDL_ATTRIBUTE_NAME = 'mdl-target');
 
             _export('MDL_ATTRIBUTE_NAME', MDL_ATTRIBUTE_NAME);
+
+            _export('MDL_RIPPLE_SELECTOR', MDL_RIPPLE_SELECTOR = '.mdl-js-ripple-effect');
+
+            _export('MDL_RIPPLE_SELECTOR', MDL_RIPPLE_SELECTOR);
 
             _export('MdlConfig', MdlConfig = function () {
                 function MdlConfig() {

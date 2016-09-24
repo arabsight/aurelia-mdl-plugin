@@ -1,5 +1,5 @@
-import { MdlConfig, MDL_ATTRIBUTE_NAME } from './config';
 import { inject, customAttribute } from 'aurelia-framework';
+import { MdlConfig, MDL_ATTRIBUTE_NAME, MDL_RIPPLE_SELECTOR } from './config';
 
 @inject(Element, MdlConfig)
 @customAttribute(MDL_ATTRIBUTE_NAME)
@@ -10,13 +10,30 @@ export class Mdl {
     }
 
     attached() {
-        if (this.config.autoUpgradeMode === true) {
-            return componentHandler.upgradeElement(this.element);
-        }
+        if (!this.config.autoUpgradeMode &&
+            !this.config.mdlClasses.some(cls => this.element.classList.contains(cls))) {
+                return;
+            }
 
-        let isMdlElement = this.config.mdlClasses.some(cls => this.element.classList.contains(cls));
-        if (isMdlElement) {
-            componentHandler.upgradeElement(this.element);
+        componentHandler.upgradeElement(this.element);
+
+        if (this.element.MaterialCheckbox ||
+            this.element.MaterialRadio ||
+            this.element.MaterialIconToggle ||
+            this.element.MaterialSwitch ||
+            this.element.MaterialDataTable ||
+            this.element.MaterialTabs) {
+            let children = this.element.querySelectorAll(MDL_RIPPLE_SELECTOR);
+            children.forEach(child => componentHandler.upgradeElement(child));
         }
     }
 }
+
+// if (this.config.autoUpgradeMode === true) {
+//     componentHandler.upgradeElement(this.element);
+// } else {
+//     let isMdlElement = this.config.mdlClasses.some(cls => this.element.classList.contains(cls));
+//     if (isMdlElement) {
+//         componentHandler.upgradeElement(this.element);
+//     }
+// }

@@ -18,6 +18,7 @@ const MDL_CLASSES = [
 ];
 
 export const MDL_ATTRIBUTE_NAME = 'mdl-target';
+export const MDL_RIPPLE_SELECTOR = '.mdl-js-ripple-effect';
 
 export class MdlConfig {
     constructor() {

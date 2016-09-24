@@ -1,4 +1,4 @@
-define(['exports', './config', 'aurelia-framework'], function (exports, _config, _aureliaFramework) {
+define(['exports', 'aurelia-framework', './config'], function (exports, _aureliaFramework, _config) {
     'use strict';
 
     Object.defineProperty(exports, "__esModule", {
@@ -25,15 +25,19 @@ define(['exports', './config', 'aurelia-framework'], function (exports, _config,
         Mdl.prototype.attached = function attached() {
             var _this = this;
 
-            if (this.config.autoUpgradeMode === true) {
-                return componentHandler.upgradeElement(this.element);
+            if (!this.config.autoUpgradeMode && !this.config.mdlClasses.some(function (cls) {
+                return _this.element.classList.contains(cls);
+            })) {
+                return;
             }
 
-            var isMdlElement = this.config.mdlClasses.some(function (cls) {
-                return _this.element.classList.contains(cls);
-            });
-            if (isMdlElement) {
-                componentHandler.upgradeElement(this.element);
+            componentHandler.upgradeElement(this.element);
+
+            if (this.element.MaterialCheckbox || this.element.MaterialRadio || this.element.MaterialIconToggle || this.element.MaterialSwitch || this.element.MaterialDataTable || this.element.MaterialTabs) {
+                var children = this.element.querySelectorAll(_config.MDL_RIPPLE_SELECTOR);
+                children.forEach(function (child) {
+                    return componentHandler.upgradeElement(child);
+                });
             }
         };
 

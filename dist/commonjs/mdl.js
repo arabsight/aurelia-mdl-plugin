@@ -7,9 +7,9 @@ exports.Mdl = undefined;
 
 var _dec, _dec2, _class;
 
-var _config = require('./config');
-
 var _aureliaFramework = require('aurelia-framework');
+
+var _config = require('./config');
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -24,15 +24,19 @@ var Mdl = exports.Mdl = (_dec = (0, _aureliaFramework.inject)(Element, _config.M
     Mdl.prototype.attached = function attached() {
         var _this = this;
 
-        if (this.config.autoUpgradeMode === true) {
-            return componentHandler.upgradeElement(this.element);
+        if (!this.config.autoUpgradeMode && !this.config.mdlClasses.some(function (cls) {
+            return _this.element.classList.contains(cls);
+        })) {
+            return;
         }
 
-        var isMdlElement = this.config.mdlClasses.some(function (cls) {
-            return _this.element.classList.contains(cls);
-        });
-        if (isMdlElement) {
-            componentHandler.upgradeElement(this.element);
+        componentHandler.upgradeElement(this.element);
+
+        if (this.element.MaterialCheckbox || this.element.MaterialRadio || this.element.MaterialIconToggle || this.element.MaterialSwitch || this.element.MaterialDataTable || this.element.MaterialTabs) {
+            var children = this.element.querySelectorAll(_config.MDL_RIPPLE_SELECTOR);
+            children.forEach(function (child) {
+                return componentHandler.upgradeElement(child);
+            });
         }
     };
 
