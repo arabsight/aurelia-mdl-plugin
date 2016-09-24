@@ -3,7 +3,7 @@
 System.register(['aurelia-framework', './config'], function (_export, _context) {
     "use strict";
 
-    var inject, customAttribute, MdlConfig, MDL_ATTRIBUTE_NAME, MDL_RIPPLE_SELECTOR, _dec, _dec2, _class, Mdl;
+    var inject, customAttribute, DOM, MdlConfig, MDL_ATTRIBUTE_NAME, MDL_RIPPLE_SELECTOR, _dec, _dec2, _class, Mdl;
 
     function _classCallCheck(instance, Constructor) {
         if (!(instance instanceof Constructor)) {
@@ -15,13 +15,14 @@ System.register(['aurelia-framework', './config'], function (_export, _context) 
         setters: [function (_aureliaFramework) {
             inject = _aureliaFramework.inject;
             customAttribute = _aureliaFramework.customAttribute;
+            DOM = _aureliaFramework.DOM;
         }, function (_config) {
             MdlConfig = _config.MdlConfig;
             MDL_ATTRIBUTE_NAME = _config.MDL_ATTRIBUTE_NAME;
             MDL_RIPPLE_SELECTOR = _config.MDL_RIPPLE_SELECTOR;
         }],
         execute: function () {
-            _export('Mdl', Mdl = (_dec = inject(Element, MdlConfig), _dec2 = customAttribute(MDL_ATTRIBUTE_NAME), _dec(_class = _dec2(_class = function () {
+            _export('Mdl', Mdl = (_dec = inject(DOM.Element, MdlConfig), _dec2 = customAttribute(MDL_ATTRIBUTE_NAME), _dec(_class = _dec2(_class = function () {
                 function Mdl(element, config) {
                     _classCallCheck(this, Mdl);
 
@@ -32,7 +33,7 @@ System.register(['aurelia-framework', './config'], function (_export, _context) 
                 Mdl.prototype.attached = function attached() {
                     var _this = this;
 
-                    if (!this.config.autoUpgradeMode && !this.config.mdlClasses.some(function (cls) {
+                    if (!this.config.autoUpgradeMode && !MdlConfig.mdlClasses.some(function (cls) {
                         return _this.element.classList.contains(cls);
                     })) {
                         return;

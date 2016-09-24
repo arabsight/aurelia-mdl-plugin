@@ -1,16 +1,16 @@
 var _dec, _dec2, _class;
 
-import { inject, customAttribute } from 'aurelia-framework';
+import { inject, customAttribute, DOM } from 'aurelia-framework';
 import { MdlConfig, MDL_ATTRIBUTE_NAME, MDL_RIPPLE_SELECTOR } from './config';
 
-export let Mdl = (_dec = inject(Element, MdlConfig), _dec2 = customAttribute(MDL_ATTRIBUTE_NAME), _dec(_class = _dec2(_class = class Mdl {
+export let Mdl = (_dec = inject(DOM.Element, MdlConfig), _dec2 = customAttribute(MDL_ATTRIBUTE_NAME), _dec(_class = _dec2(_class = class Mdl {
     constructor(element, config) {
         this.element = element;
         this.config = config;
     }
 
     attached() {
-        if (!this.config.autoUpgradeMode && !this.config.mdlClasses.some(cls => this.element.classList.contains(cls))) {
+        if (!this.config.autoUpgradeMode && !MdlConfig.mdlClasses.some(cls => this.element.classList.contains(cls))) {
             return;
         }
 

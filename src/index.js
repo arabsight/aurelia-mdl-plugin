@@ -1,6 +1,5 @@
 import { MdlConfig, MDL_ATTRIBUTE_NAME } from './config';
 
-// Temp fix to this: https://github.com/aurelia/cli/issues/292
 export * from './mdl';
 
 let pluginConfig;
@@ -28,8 +27,8 @@ export function configure(config, configCallback) {
     }
 }
 
-function beforeViewCompiled(content, resources, instruction) {
-    let elements = content.querySelectorAll(pluginConfig.mdlSelectors);
+function beforeViewCompiled(content) {
+    let elements = content.querySelectorAll(MdlConfig.mdlSelectors);
     if (elements.length === 0) return;
 
     for (let i = 0; i < elements.length; i++) {

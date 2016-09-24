@@ -1,12 +1,12 @@
 {
     "name": "aurelia-mdl-plugin",
-    "version": "0.1.10",
+    "version": "0.1.11",
     "description": "Material Design Lite plugin for Aurelia.",
     "keywords": [
         "aurelia",
         "plugin",
         "mdl",
-        "material"
+        "material design"
     ],
     "scripts": {
         "prepush": "gulp prepare-release --bump=patch",

@@ -18,11 +18,11 @@ export let MdlConfig = class MdlConfig {
         return this;
     }
 
-    get mdlClasses() {
+    static get mdlClasses() {
         return MDL_CLASSES;
     }
 
-    get mdlSelectors() {
+    static get mdlSelectors() {
         return MDL_CLASSES.map(selector => `.${ selector }`).join();
     }
 };

@@ -32,7 +32,7 @@ var MdlConfig = exports.MdlConfig = function () {
         return this;
     };
 
-    _createClass(MdlConfig, [{
+    _createClass(MdlConfig, null, [{
         key: 'mdlClasses',
         get: function get() {
             return MDL_CLASSES;

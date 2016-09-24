@@ -26,8 +26,8 @@ System.register(['./config', './mdl'], function (_export, _context) {
 
     _export('configure', configure);
 
-    function beforeViewCompiled(content, resources, instruction) {
-        var elements = content.querySelectorAll(pluginConfig.mdlSelectors);
+    function beforeViewCompiled(content) {
+        var elements = content.querySelectorAll(MdlConfig.mdlSelectors);
         if (elements.length === 0) return;
 
         for (var i = 0; i < elements.length; i++) {

@@ -1,7 +1,7 @@
-import { inject, customAttribute } from 'aurelia-framework';
+import { inject, customAttribute, DOM } from 'aurelia-framework';
 import { MdlConfig, MDL_ATTRIBUTE_NAME, MDL_RIPPLE_SELECTOR } from './config';
 
-@inject(Element, MdlConfig)
+@inject(DOM.Element, MdlConfig)
 @customAttribute(MDL_ATTRIBUTE_NAME)
 export class Mdl {
     constructor(element, config) {
@@ -11,9 +11,9 @@ export class Mdl {
 
     attached() {
         if (!this.config.autoUpgradeMode &&
-            !this.config.mdlClasses.some(cls => this.element.classList.contains(cls))) {
-                return;
-            }
+            !MdlConfig.mdlClasses.some(cls => this.element.classList.contains(cls))) {
+            return;
+        }
 
         componentHandler.upgradeElement(this.element);
 
@@ -28,12 +28,3 @@ export class Mdl {
         }
     }
 }
-
-// if (this.config.autoUpgradeMode === true) {
-//     componentHandler.upgradeElement(this.element);
-// } else {
-//     let isMdlElement = this.config.mdlClasses.some(cls => this.element.classList.contains(cls));
-//     if (isMdlElement) {
-//         componentHandler.upgradeElement(this.element);
-//     }
-// }

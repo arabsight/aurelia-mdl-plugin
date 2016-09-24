@@ -61,7 +61,7 @@ System.register([], function (_export, _context) {
                     return this;
                 };
 
-                _createClass(MdlConfig, [{
+                _createClass(MdlConfig, null, [{
                     key: 'mdlClasses',
                     get: function get() {
                         return MDL_CLASSES;
