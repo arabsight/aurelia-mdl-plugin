@@ -22,7 +22,8 @@ export class Mdl {
             this.element.MaterialIconToggle ||
             this.element.MaterialSwitch ||
             this.element.MaterialDataTable ||
-            this.element.MaterialTabs) {
+            this.element.MaterialTabs ||
+            this.element.MaterialMenu) {
             let children = this.element.querySelectorAll(MDL_RIPPLE_SELECTOR);
             children.forEach(child => componentHandler.upgradeElement(child));
         }

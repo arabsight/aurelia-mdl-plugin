@@ -33,7 +33,7 @@ define(['exports', 'aurelia-framework', './config'], function (exports, _aurelia
 
             componentHandler.upgradeElement(this.element);
 
-            if (this.element.MaterialCheckbox || this.element.MaterialRadio || this.element.MaterialIconToggle || this.element.MaterialSwitch || this.element.MaterialDataTable || this.element.MaterialTabs) {
+            if (this.element.MaterialCheckbox || this.element.MaterialRadio || this.element.MaterialIconToggle || this.element.MaterialSwitch || this.element.MaterialDataTable || this.element.MaterialTabs || this.element.MaterialMenu) {
                 var children = this.element.querySelectorAll(_config.MDL_RIPPLE_SELECTOR);
                 children.forEach(function (child) {
                     return componentHandler.upgradeElement(child);
