@@ -18,7 +18,7 @@ export let Mdl = (_dec = inject(DOM.Element, MdlConfig), _dec2 = customAttribute
 
         if (this.element.MaterialCheckbox || this.element.MaterialRadio || this.element.MaterialIconToggle || this.element.MaterialSwitch || this.element.MaterialDataTable || this.element.MaterialTabs || this.element.MaterialMenu) {
             let children = this.element.querySelectorAll(MDL_RIPPLE_SELECTOR);
-            for (i = 0; i < children.length; i++) {
+            for (let i = 0; i < children.length; i++) {
                 componentHandler.upgradeElement(children[i]);
             }
         }

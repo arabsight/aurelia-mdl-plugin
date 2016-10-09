@@ -34,7 +34,7 @@ var Mdl = exports.Mdl = (_dec = (0, _aureliaFramework.inject)(_aureliaFramework.
 
         if (this.element.MaterialCheckbox || this.element.MaterialRadio || this.element.MaterialIconToggle || this.element.MaterialSwitch || this.element.MaterialDataTable || this.element.MaterialTabs || this.element.MaterialMenu) {
             var children = this.element.querySelectorAll(_config.MDL_RIPPLE_SELECTOR);
-            for (i = 0; i < children.length; i++) {
+            for (var i = 0; i < children.length; i++) {
                 componentHandler.upgradeElement(children[i]);
             }
         }

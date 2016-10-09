@@ -43,7 +43,7 @@ System.register(['aurelia-framework', './config'], function (_export, _context) 
 
                     if (this.element.MaterialCheckbox || this.element.MaterialRadio || this.element.MaterialIconToggle || this.element.MaterialSwitch || this.element.MaterialDataTable || this.element.MaterialTabs || this.element.MaterialMenu) {
                         var children = this.element.querySelectorAll(MDL_RIPPLE_SELECTOR);
-                        for (i = 0; i < children.length; i++) {
+                        for (var i = 0; i < children.length; i++) {
                             componentHandler.upgradeElement(children[i]);
                         }
                     }
