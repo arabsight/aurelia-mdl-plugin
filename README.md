@@ -4,7 +4,7 @@
 ## With jspm:
 ```bash
 jspm install material-design-lite
-jspm install npm:aurelia-mdl-plugin
+jspm install aurelia-mdl-plugin
 ```
 
 - Register the plugin:
