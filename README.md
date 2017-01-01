@@ -1,5 +1,7 @@
 # Material Design Lite plugin for Aurelia. [CLI DEMO](https://github.com/arabsight/aurelia-mdl-plugin-demo)
 
+[![NPM](https://nodei.co/npm/aurelia-mdl-plugin.png?compact=true)](https://nodei.co/npm/aurelia-mdl-plugin/)
+
 ## Usage
 ## With jspm:
 ```bash
