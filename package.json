@@ -1,6 +1,6 @@
 {
     "name": "aurelia-mdl-plugin",
-    "version": "0.1.16",
+    "version": "0.1.17",
     "description": "Material Design Lite plugin for Aurelia.",
     "keywords": [
         "aurelia",
@@ -19,7 +19,7 @@
     },
     "license": "MIT",
     "author": "Rabah Ghodbane <r-ghodbane@live.com>",
-    "main": "dist/amd/index.js",
+    "main": "dist/commonjs/index.js",
     "repository": {
         "type": "git",
         "url": "https://github.com/arabsight/aurelia-mdl-plugin"

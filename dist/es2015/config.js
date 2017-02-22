@@ -23,6 +23,6 @@ export let MdlConfig = class MdlConfig {
     }
 
     static get mdlSelectors() {
-        return MDL_CLASSES.map(selector => `.${ selector }`).join();
+        return MDL_CLASSES.map(selector => `.${selector}`).join();
     }
 };

@@ -21,7 +21,7 @@ var MdlConfig = exports.MdlConfig = function () {
     }
 
     MdlConfig.prototype.autoUpgrade = function autoUpgrade() {
-        var value = arguments.length <= 0 || arguments[0] === undefined ? true : arguments[0];
+        var value = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
 
         this.autoUpgradeMode = Boolean(value);
         return this;
