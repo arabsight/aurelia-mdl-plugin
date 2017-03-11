@@ -1,3 +1,4 @@
+import { PLATFORM } from 'aurelia-pal';
 import { MdlConfig, MDL_ATTRIBUTE_NAME } from './config';
 
 export * from './mdl';
@@ -17,7 +18,7 @@ export function configure(config, configCallback) {
         configCallback(pluginConfig);
     }
 
-    config.globalResources('./mdl');
+    config.globalResources(PLATFORM.moduleName('./mdl'));
 
     if (pluginConfig.autoUpgradeMode === true) {
         config.aurelia.resources

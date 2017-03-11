@@ -17,6 +17,8 @@ Object.keys(_mdl).forEach(function (key) {
 });
 exports.configure = configure;
 
+var _aureliaPal = require('aurelia-pal');
+
 var _config = require('./config');
 
 var pluginConfig = void 0;
@@ -32,7 +34,7 @@ function configure(config, configCallback) {
         configCallback(pluginConfig);
     }
 
-    config.globalResources('./mdl');
+    config.globalResources(_aureliaPal.PLATFORM.moduleName('./mdl'));
 
     if (pluginConfig.autoUpgradeMode === true) {
         config.aurelia.resources.registerViewEngineHooks({

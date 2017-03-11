@@ -1,9 +1,9 @@
 'use strict';
 
-System.register(['./config', './mdl'], function (_export, _context) {
+System.register(['aurelia-pal', './config', './mdl'], function (_export, _context) {
     "use strict";
 
-    var MdlConfig, MDL_ATTRIBUTE_NAME, pluginConfig;
+    var PLATFORM, MdlConfig, MDL_ATTRIBUTE_NAME, pluginConfig;
     function configure(config, configCallback) {
         if (typeof componentHandler === 'undefined') {
             throw new Error('MDL needs to be loaded before the plugin.');
@@ -15,7 +15,7 @@ System.register(['./config', './mdl'], function (_export, _context) {
             configCallback(pluginConfig);
         }
 
-        config.globalResources('./mdl');
+        config.globalResources(PLATFORM.moduleName('./mdl'));
 
         if (pluginConfig.autoUpgradeMode === true) {
             config.aurelia.resources.registerViewEngineHooks({
@@ -36,7 +36,9 @@ System.register(['./config', './mdl'], function (_export, _context) {
         }
     }
     return {
-        setters: [function (_config) {
+        setters: [function (_aureliaPal) {
+            PLATFORM = _aureliaPal.PLATFORM;
+        }, function (_config) {
             MdlConfig = _config.MdlConfig;
             MDL_ATTRIBUTE_NAME = _config.MDL_ATTRIBUTE_NAME;
         }, function (_mdl) {

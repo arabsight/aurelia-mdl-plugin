@@ -91,7 +91,7 @@ import the css:
 - manual upgrade:
 
 the plugin looks for specific mdl components and adds a custom attribute for each one automatically.
-If for some reason you don't wanna auto upgrade you can change that when registering the plugin:
+If for some reason you don't want to auto upgrade you can change that when registering the plugin:
 
 ```js
 aurelia.use

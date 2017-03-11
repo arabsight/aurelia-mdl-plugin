@@ -1,82 +1,86 @@
 {
-    "name": "aurelia-mdl-plugin",
-    "version": "0.1.18",
-    "description": "Material Design Lite plugin for Aurelia.",
-    "keywords": [
-        "aurelia",
-        "plugin",
-        "mdl",
-        "material design"
-    ],
-    "scripts": {
-        "prepush": "gulp prepare-release --bump=patch",
-        "push": "git add --all && git commit -m \"$(date)\" && git push origin master && npm publish",
-        "test": "gulp test"
-    },
-    "homepage": "https://github.com/arabsight/aurelia-mdl-plugin",
-    "bugs": {
-        "url": "https://github.com/arabsight/aurelia-mdl-plugin/issues"
-    },
-    "license": "MIT",
-    "author": "Rabah Ghodbane <r-ghodbane@live.com>",
-    "main": "dist/commonjs/index.js",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/arabsight/aurelia-mdl-plugin"
+  "name": "aurelia-mdl-plugin",
+  "version": "1.0.0",
+  "description": "Material Design Lite plugin for Aurelia.",
+  "keywords": [
+    "aurelia",
+    "plugin",
+    "mdl",
+    "material design"
+  ],
+  "scripts": {
+    "prepush": "gulp prepare-release --bump=major",
+    "push": "git add --all && git commit -m \"$(date)\" && git push origin master && npm publish",
+    "test": "gulp test"
+  },
+  "homepage": "https://github.com/arabsight/aurelia-mdl-plugin",
+  "bugs": {
+    "url": "https://github.com/arabsight/aurelia-mdl-plugin/issues"
+  },
+  "license": "MIT",
+  "author": "Rabah Ghodbane <r-ghodbane@live.com>",
+  "main": "dist/commonjs/index.js",
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arabsight/aurelia-mdl-plugin"
+  },
+  "devDependencies": {
+    "aurelia-pal": "^1.3.0",
+    "aurelia-tools": "^1.0.0",
+    "babel": "^6.5.2",
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-syntax-flow": "^6.13.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-es2015-modules-amd": "^6.8.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.14.0",
+    "babel-plugin-transform-es2015-modules-systemjs": "^6.14.0",
+    "babel-plugin-transform-es2015-spread": "^6.8.0",
+    "babel-plugin-transform-flow-strip-types": "^6.14.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-es2015-loose": "^8.0.0",
+    "babel-preset-stage-1": "^6.13.0",
+    "conventional-changelog": "^1.1.0",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-bump": "^2.4.0",
+    "gulp-eslint": "^3.0.1",
+    "gulp-yuidoc": "^0.1.2",
+    "isparta": "^4.0.0",
+    "istanbul": "^1.1.0-alpha.1",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.3.0",
+    "karma-babel-preprocessor": "^6.0.1",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-coverage": "^1.1.1",
+    "karma-jasmine": "^1.0.2",
+    "karma-jspm": "^2.2.0",
+    "object.assign": "^4.0.4",
+    "require-dir": "^0.3.0",
+    "run-sequence": "^1.2.2",
+    "vinyl-paths": "^2.1.0",
+    "yargs": "^7.0.2"
+  },
+  "jspm": {
+    "registry": "npm",
+    "main": "index",
+    "format": "amd",
+    "directories": {
+      "dist": "dist/amd"
     },
     "devDependencies": {
-        "aurelia-tools": "^0.2.4",
-        "babel": "^6.5.2",
-        "babel-eslint": "^6.1.2",
-        "babel-plugin-syntax-flow": "^6.13.0",
-        "babel-plugin-transform-decorators-legacy": "^1.3.4",
-        "babel-plugin-transform-es2015-modules-amd": "^6.8.0",
-        "babel-plugin-transform-es2015-modules-commonjs": "^6.14.0",
-        "babel-plugin-transform-es2015-modules-systemjs": "^6.14.0",
-        "babel-plugin-transform-es2015-spread": "^6.8.0",
-        "babel-plugin-transform-flow-strip-types": "^6.14.0",
-        "babel-preset-es2015": "^6.14.0",
-        "babel-preset-es2015-loose": "^8.0.0",
-        "babel-preset-stage-1": "^6.13.0",
-        "conventional-changelog": "^1.1.0",
-        "del": "^2.2.2",
-        "gulp": "^3.9.1",
-        "gulp-babel": "^6.1.2",
-        "gulp-bump": "^2.4.0",
-        "gulp-eslint": "^3.0.1",
-        "gulp-yuidoc": "^0.1.2",
-        "isparta": "^4.0.0",
-        "istanbul": "^1.1.0-alpha.1",
-        "jasmine-core": "^2.5.2",
-        "karma": "^1.3.0",
-        "karma-babel-preprocessor": "^6.0.1",
-        "karma-chrome-launcher": "^2.0.0",
-        "karma-coverage": "^1.1.1",
-        "karma-jasmine": "^1.0.2",
-        "karma-jspm": "^2.2.0",
-        "object.assign": "^4.0.4",
-        "require-dir": "^0.3.0",
-        "run-sequence": "^1.2.2",
-        "vinyl-paths": "^2.1.0",
-        "yargs": "^5.0.0"
-    },
-    "jspm": {
-        "registry": "npm",
-        "main": "index",
-        "format": "amd",
-        "directories": {
-            "dist": "dist/amd"
-        },
-        "devDependencies": {
-            "aurelia-framework": "^1.0.0",
-            "aurelia-polyfills": "^1.0.0"
-        }
-    },
-    "aurelia": {
-        "build": {
-            "resources": [
-                "mdl"
-            ]
-        }
+      "aurelia-framework": "^1.0.0",
+      "aurelia-polyfills": "^1.0.0"
     }
+  },
+  "aurelia": {
+    "build": {
+      "resources": [
+        "mdl"
+      ]
+    }
+  }
 }

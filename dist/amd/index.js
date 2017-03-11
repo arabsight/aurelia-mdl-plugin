@@ -1,4 +1,4 @@
-define(['exports', './mdl', './config'], function (exports, _mdl, _config) {
+define(['exports', './mdl', 'aurelia-pal', './config'], function (exports, _mdl, _aureliaPal, _config) {
     'use strict';
 
     Object.defineProperty(exports, "__esModule", {
@@ -29,7 +29,7 @@ define(['exports', './mdl', './config'], function (exports, _mdl, _config) {
             configCallback(pluginConfig);
         }
 
-        config.globalResources('./mdl');
+        config.globalResources(_aureliaPal.PLATFORM.moduleName('./mdl'));
 
         if (pluginConfig.autoUpgradeMode === true) {
             config.aurelia.resources.registerViewEngineHooks({
