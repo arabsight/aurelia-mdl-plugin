@@ -11,7 +11,7 @@ jspm install aurelia-mdl-plugin
 
 - Register the plugin:
 ```js
-import 'material-design-lite/material';
+import 'aurelia-mdl-plugin';
 
 export function configure(aurelia) {
     ...
