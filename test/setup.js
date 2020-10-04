@@ -1,2 +1,2 @@
-import 'aurelia-polyfills';
+import "aurelia-polyfills";
 window.componentHandler = {};

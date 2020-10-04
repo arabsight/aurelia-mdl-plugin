@@ -1,5 +1,5 @@
-import { configure } from '../../src/index';
-import { MdlConfig } from '../../src/config';
+import { configure } from "../../src/index";
+import { MdlConfig } from "../../src/config";
 
 class ConfigStub {
     globalResources(...resources) {
@@ -8,18 +8,18 @@ class ConfigStub {
 
     aurelia = {
         resources: {
-            registerViewEngineHooks: () => null
-        }
+            registerViewEngineHooks: () => null,
+        },
     };
 
     container = {
         get: (key) => {
             return new MdlConfig();
-        }
+        },
     };
 }
 
-describe('the Aurelia configuration', () => {
+describe("the Aurelia configuration", () => {
     var mockedConfiguration;
 
     beforeEach(() => {
@@ -27,8 +27,7 @@ describe('the Aurelia configuration', () => {
         configure(mockedConfiguration);
     });
 
-    it('should register a global resource', () => {
-        expect(mockedConfiguration.resources).toContain('./mdl');
+    it("should register a global resource", () => {
+        expect(mockedConfiguration.resources).toContain("./mdl");
     });
-
 });
